@@ -1,0 +1,165 @@
+body {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.container1 {
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+.container {
+    width: 80%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.title {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.date-time {
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.trade-setup{
+    margin-bottom: 2em;
+}
+
+.date-time p {
+    margin: 0.5em 0;
+}
+
+.trade-setup h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.setup-details {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1em;
+    border-radius: 8px;
+}
+
+.detail p {
+    margin: 0.5em 0;
+}
+
+
+
+.market{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.market-analysis {
+    margin-top: 30px;
+    
+}
+
+.market-analysis h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.technical-analysis, .fundamental-analysis {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+
+.technical-analysis h3, .fundamental-analysis h3 {
+    font-size: 1.2em;
+    margin-bottom: 50px;
+    
+    padding-bottom: 5px;
+}
+
+.analysis-section {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+
+}
+
+.analysis-section p {
+  
+    padding: 0;
+    margin: 0.5em 0;
+}
+
+
+
+
+
+.containerimage {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+
+
+
+.section img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #f8fafc;
+    font-size: 20px;
+    margin-top: 30px;
+    text-transform: uppercase;
+}
+
+p {
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.containertext{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+    max-width: 1000px;
+   
+}
+
+a {
+    color: inherit; /* or specify a color like 'black' or 'red' */
+    text-decoration: none;
+
+  }
+
+  a {
+    margin-right: 20px; /* Adds space to the right of each link */
+  }

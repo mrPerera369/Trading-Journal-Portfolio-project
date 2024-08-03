@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trade List</title>
+    
+</head>
+<body>
+    
+    <h1>Trade List</h1>
+    <a href="{% url 'add_trade' %}">Add New Trade</a>
+    
+    <section>
+        <h2>Crypto Futures</h2>
+        <ul>
+            {% for trade in crypto_futures %}
+                <li><a href="{% url 'trade_detail' trade.id %}">{{ trade }}</a></li>
+            {% endfor %}
+        </ul>
+    </section>
+    
+    <section>
+        <h2>Crypto Spot</h2>
+        <ul>
+            {% for trade in crypto_spot %}
+                <li><a href="{% url 'trade_detail' trade.id %}">{{ trade }}</a></li>
+            {% endfor %}
+        </ul>
+    </section>
+    
+    <section>
+        <h2>Forex</h2>
+        <ul>
+            {% for trade in forex %}
+                <li><a href="{% url 'trade_detail' trade.id %}">{{ trade }}</a></li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trade Detail</title>
+</head>
+<body>
+    <h1>Trade Detail</h1>
+    <p><strong>Trade:</strong> {{ trade }}</p>
+    <p><strong>Currency Fair:</strong> {{ trade.currency_fair }}</p>
+    <!-- Display other details here -->
+    <a href="{% url 'edit_trade' trade.pk %}">Edit Trade</a>
+    <a href="{% url 'delete_trade' trade.pk %}">Delete Trade</a>
+    <a href="{% url 'trade_list' %}">Back to Trade List</a>
+</body>
+</html>

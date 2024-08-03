@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trade Detail</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body class="container1">
+
+
+    <div class="container">
+        <h1 class="title">{{ trade.currency_fair }}</h1>
+        <div class="date-time">
+            <p><strong>Open Date:</strong> {{ trade.open_date|date:"Y-m-d" }}</p>
+            <p><strong>Open Time:</strong> {{ trade.open_time|time:"h:i A" }}</p>
+            <p><strong>Close Date:</strong> {{ trade.close_date|date:"Y-m-d" }}</p>
+            <p><strong>Open Time:</strong> {{ trade.close_time|time:"h:i A" }}</p>
+        </div>
+        <div class="trade-setup">
+            <h2>Trade Setup</h2>
+            <div class="setup-details">
+                <div class="detail">
+                    <p>Action</p>
+                    <p>{{ trade.get_action_display }}</p>
+                </div>
+                <div class="detail">
+                    <p>Time Frame</p>
+                    <p>{{ trade.get_time_frame_display }}</p>
+                </div>
+                <div class="detail">
+                    <p>Win/Lose</p>
+                    <p>{{ trade.win_lose }}</p>
+                </div>
+                <div class="detail">
+                    <p>Margin</p>
+                    <p>{{ trade.margine }}</p>
+                </div>
+                <div class="detail">
+                    <p>Leverage</p>
+                    <p>{{ trade.leverage }}</p>
+                </div>
+                <div class="detail">
+                    <p>SL</p>
+                    <p>{{ trade.sl }}</p>
+                </div>
+                <div class="detail">
+                    <p>TP</p>
+                    <p>{{ trade.tp }}</p>
+                    
+                </div>
+                <div class="detail">
+                    <p>Open Price</p>
+                    <p>{{ trade.open_price }}</p>
+                </div>
+                <div class="detail">
+                    <p>Risk/Reward Ratio</p>
+                    <p>{{ trade.risk_reward_ratio }}</p>
+                </div>
+                <div class="detail">
+                    <p>Target Price</p>
+                    <p>{{ trade.target_price }}</p>
+                </div>
+                <div class="detail">
+                    <p>Stop</p>
+                    <p>{{ trade.stop }}</p>
+                </div>
+                <div class="detail">
+                    <p>Close Price</p>
+                    <p>{{ trade.close_price }}</p>
+                </div>
+                <div class="detail">
+                    <p>Duration</p>
+                    <p>{{ trade.duration }}</p>
+                </div>
+                <div class="detail">
+                    <p>Gain</p>
+                    <p>{{ trade.gain }} %</p>
+                </div>
+                <div class="detail">
+                    <p>Profit / Loss</p>
+                    <p>{{ trade.profit_loss }}</p>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    <div class="container">
+    <div class="market-analysis">
+        <h2>Market Analysis</h2>
+        <div class="technical-analysis">
+            <h3>Technical Analysis</h3>
+            <div class="analysis-section">
+                <p><strong>Technical Analysis Charts/Patterns:</strong> </p>
+                <p>{{ trade.technical_analysis_charts_patterns }}</p>
+            </div>
+            <div class="analysis-section">
+                <p><strong>Technical Analysis Indicators:</strong></p>
+                <p>{{ trade.technical_analysis_indicators }}</p>
+            </div>
+            <div class="analysis-section">
+                <p><strong>Volume Analysis:</strong></p>
+                <p>{{ trade.volume_analysis }}</p>
+            </div>
+            <div class="analysis-section">
+                <p><strong>Support/Resistance:</strong></p>
+                <p>{{ trade.support_resistance }}</p>
+            </div>
+            <div class="analysis-section">
+                <p><strong>Trend:</strong></p>
+                <p>{{ trade.trend }}</p>
+            </div>
+            <div class="analysis-section">
+                <p><strong>Fibonacci Retracement:</strong></p>
+                <p>{{ trade.fibonacci_retracement }}</p>
+            </div>
+            <div class="analysis-section">
+                <p><strong>SMC Trading:</strong></p>
+                <p>{{ trade.smc_trading }}</p>
+            </div>
+        </div>
+        <div class="fundamental-analysis">
+            <h3><strong>Fundamental Analysis:</strong></h3>
+            <p>{{ trade.fundamental_analysis }}</p>
+        </div>
+    </div>
+    </div>
+    <div class="containerimage">
+        <h2>Screen Shots</h2>
+        <div class="section">
+           
+            {% if trade.entry_trade_image %}
+        <p><strong>Entry Trade Image:</strong><br><img src="{{ trade.entry_trade_image.url }}" alt="Entry Trade Image" width="500"></p>
+    {% endif %}
+        </div>
+        <div class="section">
+            
+                            {% if trade.exit_trade_image %}
+        <p><strong>Exit Trade Image:</strong><br><img src="{{ trade.exit_trade_image.url }}" alt="Exit Trade Image" width="500"></p>
+    {% endif %}
+           
+        </div>
+        <div class="section">
+            
+            {% if trade.technical_analysis_image %}
+        <p><strong>Technical Analysis Image:</strong><br><img src="{{ trade.technical_analysis_image.url }}" alt="Technical Analysis Image" width="500"></p>
+    {% endif %}
+        </div>
+    </div>
+
+<div class="containertext">
+    <h2>Mistakes</h2>
+    <ul>
+        {% for mistake in trade.mistakes %}
+            <li>{{ mistake }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Lessons Learned</h2>
+    <ul>
+        {% for lesson in trade.lessons %}
+            <li>{{ lesson }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Additional</h2>
+    <ul>
+        {% for additional in trade.additional %}
+            <li>{{ additional }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="">
+    <a href="{% url 'trade_list' %}">Back to Trade List</a>
+
+    <a href="{% url 'edit_trade' trade.pk %}">Edit Trade</a>
+    <a href="{% url 'delete_trade' trade.pk %}">Delete Trade</a>
+    <a href="{% url 'trade_list' %}">Back to Trade List</a>
+</div>
+</body>
+</html>

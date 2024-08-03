@@ -1,0 +1,22 @@
+<!-- trades/templates/trade_list.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trade List</title>
+</head>
+<body>
+    <h1>Trade List</h1>
+    <a href="{% url 'add_trade' %}">Add New Trade</a>
+  
+
+
+
+    <ul>
+        {% for trade in trades %}
+            <li><a href="{% url 'trade_detail' trade.id %}">{{ trade }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+

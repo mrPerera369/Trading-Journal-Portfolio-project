@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirm Delete</title>
+</head>
+<body>
+    <h1>Are you sure you want to delete this trade?</h1>
+    <p><strong>Trade:</strong> {{ trade }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirm Delete</button>
+    </form>
+    <a href="{% url 'trade_detail' trade.pk %}">Cancel</a>
+</body>
+</html>
